@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore SpaceX Data</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1a1a2e;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            width: 90%;
+            max-width: 800px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            margin: 20px 0;
+        }
+        h1, h2 {
+            text-align: center;
+            color: #00d1b2;
+        }
+        button {
+            background-color: #00d1b2;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-bottom: 10px;
+        }
+        button:hover {
+            background-color: #008f92;
+        }
+        .info {
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Explore SpaceX</h1>
+        <h2>Launch Sites</h2>
+        <button onclick="fetchLaunchSites()">Show Launch Sites</button>
+        <div id="launch-sites"></div>
+
+        <h2>Dragon Capsules</h2>
+        <button onclick="fetchDragonCapsules()">Show Dragon Capsules</button>
+        <div id="dragon-capsules"></div>
+    </div>
+
+    <script>
+        // Fetch launch sites information
+        async function fetchLaunchSites() {
+            try {
+                const response = await fetch('https://api.spacexdata.com/v4/launchpads');
+                const sites = await response.json();
+                const siteInfo = sites.map(site => `
+                    <div class="info">
+                        <strong>Name:</strong> ${site.name}
+                        <br><strong>Location:</strong> ${site.locality}, ${site.region}
+                        <br><strong>Status:</strong> ${site.status}
+                        <br><strong>Details:</strong> ${site.details || 'No details available.'}
+                    </div>
+                `).join('');
+                document.getElementById('launch-sites').innerHTML = siteInfo || '<p>No launch sites found.</p>';
+            } catch (error) {
+                document.getElementById('launch-sites').innerHTML = '<p>Error fetching launch site data.</p>';
+                console.error(error);
+            }
+        }
+
+        // Fetch Dragon capsules information
+        async function fetchDragonCapsules() {
+            try {
+                const response = await fetch('https://api.spacexdata.com/v4/dragons');
+                const capsules = await response.json();
+                const capsuleInfo = capsules.map(capsule => `
+                    <div class="info">
+                        <strong>Name:</strong> ${capsule.name}
+                        <br><strong>Type:</strong> ${capsule.type}
+                        <br><strong>Active:</strong> ${capsule.active ? 'Yes' : 'No'}
+                        <br><strong>First Flight:</strong> ${new Date(capsule.first_flight).toLocaleDateString()}
+                        <br><strong>Details:</strong> ${capsule.description}
+                    </div>
+                `).join('');
+                document.getElementById('dragon-capsules').innerHTML = capsuleInfo || '<p>No Dragon capsules found.</p>';
+            } catch (error) {
+                document.getElementById('dragon-capsules').innerHTML = '<p>Error fetching Dragon capsules data.</p>';
+                console.error(error);
+            }
+        }
+    </script>
+</body>
+</html>

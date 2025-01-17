@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>ES-Portfollio</title>
+</head>
+
+<body>
+    <script>document.addEventListener("DOMContentLoaded", () => {
+        const element = document.querySelector(".animated-element");
+        if (element) {
+          element.classList.add("animate");
+        }
+      });</script>
+    <header>
+        <nav>
+            <div class="logo"><a href="index.html">ES-Portfollio</a></div>
+            <ul>
+                <li><a href="#Home">Home</a></li>
+                <li><a href="#Competence">Competences</a></li>
+                <li><a href="#Contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="Home">
+            <div class="intro">
+                <h1 class="animated-element">ES-Portfollio</h1>
+                <a href="#Competence" class="BtnApprendre">Mes projets</a>
+                <p>Passionné par le web, je conçois et développe des solutions créatives et efficaces.</p>
+
+
+            </div>
+            <div class="iconCompetences">
+                <img src="icon/js.svg" alt="">
+                <img src="icon/php.svg" alt="">
+                <img src="icon/mysql.svg" alt="">
+                <img src="icon/python.svg" alt="">
+            </div>
+        </section>
+        <div class="iconSocial">
+            <h2>Suivre l'aventure</h2>
+            <div>
+            <a href=""><img src="icon/linkedin.png" alt=""></a>
+            <a href=""><img src="icon/facebook.png" alt=""></a>
+            <a href=""><img src="icon/twitter.png" alt=""></a>
+        </div>
+        </div>
+        <section id="Competence">
+            <h2>L'ensemble de se que je propose</h2>
+            <div class="mesProjets">
+<div class="projet"><img src="icon/vitrine.png" alt=""><p>Tous types de Site web Vitirine professionnel</p></div>
+<div class="projet"><img src="icon/api.png" alt=""><p>Integration de methode et d'API Simples ou Complexe</p></div>
+<div class="projet"><img src="icon/boite-demballage.png" alt=""><p>Creation d'outils web sur mesure</p></div>
+            </div>
+        </section>
+        <section id="Contact">
+            <form action="">
+                <h2>Contact</h2>
+                <fieldset>
+                    <input type="text" name="Nom" id="NomPrenom" placeholder="Nom & Prénom" required>
+                    <input type="email" name="Email" id="Email" placeholder="Email" required>
+                </fieldset>
+                <fieldset>
+                    <input type="text" name="Objet" id="Objet" placeholder="Objet" required>
+                    <textarea id="message" name="message" rows="5" cols="30" placeholder="Écrivez votre message ici..." required></textarea>
+                </fieldset>
+                <label for="Valider"><input type="checkbox" name="Valider" id="Valider">J'accepte que mes donner inscrite dans le formlaire sois utiliser pour etre contacter
+                </label>
+                <input type="submit" value="Envoyer mon message">
+            </form>
+        </section>
+    </main>
+    <footer style="background-color: #1e1e1e; color: #ffffff; padding: 20px; text-align: center;">
+        <p>&copy; 2025 Votre Nom. Tous droits réservés.</p>
+        <p>
+            Suivez-moi :
+            <a href="https://www.linkedin.com/in/votre-profil" target="_blank" style="color: #00aaff; text-decoration: none;">LinkedIn</a> |
+            <a href="https://github.com/votre-profil" target="_blank" style="color: #00aaff; text-decoration: none;">GitHub</a> |
+            <a href="https://twitter.com/votre-profil" target="_blank" style="color: #00aaff; text-decoration: none;">Twitter</a>
+        </p>
+        <p>Conçu avec passion par un développeur web dynamique de 23 ans. 💻✨</p>
+    </footer>
+
+</body>
+
+</html>

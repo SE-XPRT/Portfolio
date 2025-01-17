@@ -68,11 +68,18 @@
                     <input type="text" name="Objet" id="Objet" placeholder="Objet" required>
                     <textarea id="message" name="message" rows="5" cols="30" placeholder="Écrivez votre message ici..." required></textarea>
                 </fieldset>
-                <label for="Valider"><input type="checkbox" name="Valider" id="Valider">J'accepte que mes donner inscrite dans le formlaire sois utiliser pour etre contacter
+                <label for="Valider">
+                    <input type="checkbox" name="Valider" id="Valider" required>
+                    J'accepte que mes données inscrites dans le formulaire soient utilisées pour être contacté(e).
                 </label>
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_subject" value="Nouveau message via le formulaire !">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_next" value="https://votre-site.com/merci.html">
                 <input type="submit" value="Envoyer mon message">
             </form>
         </section>
+        
     </main>
     <footer style="background-color: #1e1e1e; color: #ffffff; padding: 20px; text-align: center;">
         <p>&copy; 2025 Votre Nom. Tous droits réservés.</p>

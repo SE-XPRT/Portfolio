@@ -243,7 +243,7 @@ box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 
    
     font-size: 1.6em;
 }
-/* Section Contact Styling */
+
 #Contact {
     width: 100%;
     max-width: 600px;
@@ -279,7 +279,7 @@ box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 
 margin: 10px;
 }
 
-/* Fieldset Styling */
+
 #Contact fieldset {
     border: none;
     padding: 0;
@@ -313,7 +313,7 @@ margin: 10px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
-/* Submit Button Styling */
+
 #Contact input[type="submit"] {
     padding: 12px 20px;
     font-size: 1em;
@@ -331,7 +331,7 @@ margin: 10px;
     border: none;
 }
 
-/* Responsive Design */
+
 @media (max-width: 768px) {
     #Contact {
         padding: 15px;
